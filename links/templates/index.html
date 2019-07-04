@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Links App</title>
+</head>
+<body>
+<div>
+    {% for link in links %}
+        <div>
+            <h2>{{ link.title }}</h2>
+        {% for tag in link.tags.all %}
+            <a href="/tag/{{ tag.tag }}/" class="tag">{{ tag.tag }}</a>
+        {% endfor %}
+        </div>
+    {% endfor %}
+</div>
+</body>
+</html>
